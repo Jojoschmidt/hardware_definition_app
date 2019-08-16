@@ -22,8 +22,7 @@ class _NewsCardState extends State<NewsCard> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(90),
                   child: Container(
-                    constraints: BoxConstraints.tightFor(
-                        width: 45, height: 45),
+                    constraints: BoxConstraints.tightFor(width: 45, height: 45),
                     color: Colors.black,
                   ),
                 ),
@@ -41,9 +40,7 @@ class _NewsCardState extends State<NewsCard> {
                   ),
                   Text(
                     'wczoraj',
-                    style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w300),
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.w300),
                   )
                 ],
               )
@@ -53,12 +50,10 @@ class _NewsCardState extends State<NewsCard> {
         Container(
           alignment: AlignmentDirectional.topStart,
           child: Padding(
-            padding: EdgeInsets.only(left: 20,top: 10,bottom: 10),
+            padding: EdgeInsets.only(left: 20, top: 10, bottom: 10),
             child: Text(
               'IOS oraz IPadOS 13 Beta 5 - Co nowego?',
-              style: TextStyle(
-                  fontSize: 25
-              ),
+              style: TextStyle(fontSize: 25),
             ),
           ),
         ),
