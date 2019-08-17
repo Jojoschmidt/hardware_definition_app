@@ -14,8 +14,7 @@ class _NewsScreenState extends State<NewsScreen> {
   void initState() {
     super.initState();
     scrollController = ScrollController()
-      ..addListener(() => setState(() {
-          }));
+      ..addListener(() =>{});
 
   }
 
@@ -49,7 +48,6 @@ class _NewsScreenState extends State<NewsScreen> {
                     Expanded(
                       child: ListView.separated(
                         padding: EdgeInsets.only(top: 100),
-                        controller: scrollController,
                         itemBuilder: (BuildContext context, int index) {
                           return NewsCard();
                         },
@@ -98,10 +96,13 @@ class _NewsScreenState extends State<NewsScreen> {
                               size: 40,
                               color: Colors.black12,
                             ),
-                            Icon(
-                              Icons.person,
-                              size: 40,
-                              color: Colors.black12,
+                            GestureDetector(
+                              onTap: ()=>Navigator.pushNamed(context, '/profile'),
+                              child: Icon(
+                                Icons.person,
+                                size: 40,
+                                color: Colors.black12,
+                              ),
                             )
                           ],
                         ),
@@ -130,7 +131,7 @@ class _NewsScreenState extends State<NewsScreen> {
                   ),
                 ),
                 Opacity(
-                  opacity: opacity,
+                  opacity: 1,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: ClipRRect(
@@ -163,17 +164,6 @@ class _NewsScreenState extends State<NewsScreen> {
         ),
       ),
     );
-  }
-}
-class Cus extends StatefulWidget {
-  @override
-  _CusState createState() => _CusState();
-}
-
-class _CusState extends State<Cus> {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }
 

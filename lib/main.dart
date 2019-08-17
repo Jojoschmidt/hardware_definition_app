@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hardware_definition_app/profile_screen.dart';
 
 import 'news_screen.dart';
 
@@ -12,6 +13,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/' : (context) => NewsScreen(),
+        '/profile' : (context) => ProfileScreen()
       },
     );
   }
