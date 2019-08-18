@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
-
-import 'news_image_card.dart';
+import 'package:hardware_definition_app/constraints.dart';
+import 'news_card_insides.dart';
 
 class NewsCard extends StatefulWidget {
+  final String author;
+  final String date;
+  final String title;
+  final String type;
+  final Image image;
+
+  NewsCard(this.author, this.date, this.title, this.type, this.image);
+
   @override
   _NewsCardState createState() => _NewsCardState();
 }
@@ -35,11 +43,11 @@ class _NewsCardState extends State<NewsCard> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Text(
-                    'Grzesiek Wąski',
+                    widget.author,
                     style: TextStyle(fontSize: 18),
                   ),
                   Text(
-                    'wczoraj',
+                    widget.date,
                     style: TextStyle(fontSize: 15, fontWeight: FontWeight.w300),
                   )
                 ],
@@ -52,12 +60,12 @@ class _NewsCardState extends State<NewsCard> {
           child: Padding(
             padding: EdgeInsets.only(left: 20, top: 10, bottom: 10),
             child: Text(
-              'IOS oraz IPadOS 13 Beta 5 - Co nowego?',
+              widget.title,
               style: TextStyle(fontSize: 25),
             ),
           ),
         ),
-        NewsImageCard()
+        NewsCardInsides(widget.type,widget.image)
       ],
     );
   }

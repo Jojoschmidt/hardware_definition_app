@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hardware_definition_app/profile_screen.dart';
-
-import 'news_screen.dart';
+import 'package:hardware_definition_app/screens/news/news_screen.dart';
+import 'package:hardware_definition_app/screens/profile/profile_screen.dart';
 
 void main() => runApp(MyApp());
 

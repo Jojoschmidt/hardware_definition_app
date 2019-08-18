@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:hardware_definition_app/constraints.dart';
+class NewsCardInsides extends StatefulWidget {
+  final String type;
+  final Image image;
 
-class NewsImageCard extends StatefulWidget {
+  NewsCardInsides(this.type, this.image);
+
   @override
-  _NewsImageCardState createState() => _NewsImageCardState();
+  _NewsCardInsidesState createState() => _NewsCardInsidesState();
 }
 
-class _NewsImageCardState extends State<NewsImageCard> {
+class _NewsCardInsidesState extends State<NewsCardInsides> {
   @override
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size.width;
@@ -18,6 +23,7 @@ class _NewsImageCardState extends State<NewsImageCard> {
           children: <Widget>[
             Container(
               color: Color(0xFFCCCCCC),
+              child: widget.image,
               constraints: BoxConstraints.tightFor(width: media,height: media*0.5),
             ),
             Padding(
@@ -32,7 +38,7 @@ class _NewsImageCardState extends State<NewsImageCard> {
                     child: Padding(
                       padding: EdgeInsets.symmetric(horizontal: 15),
                       child: Text(
-                        'Konkurs',
+                        widget.type,
                         style: TextStyle(
                             fontSize: 20,
                             color: Colors.white

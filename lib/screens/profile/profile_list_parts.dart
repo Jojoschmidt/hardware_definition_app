@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hardware_definition_app/constraints.dart';
 // ignore: must_be_immutable
 class ProfileListElement extends StatefulWidget {
   String name;

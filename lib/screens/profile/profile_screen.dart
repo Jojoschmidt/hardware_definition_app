@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:hardware_definition_app/profile_list_parts.dart';
+import 'package:hardware_definition_app/screens/profile/profile_list_parts.dart';
+import 'package:hardware_definition_app/constraints.dart';
+import 'package:hardware_definition_app/constraints.dart';
 
 class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Color(0xFFF5F5F5),
+      backgroundColor: kProfileScreenBackgroundColor,
       body: ListView(
         shrinkWrap: true,
         children: <Widget>[
@@ -16,7 +18,7 @@ class ProfileScreen extends StatelessWidget {
               borderRadius: BorderRadius.circular(40),
               child: Container(
                 height: media.height * 0.4,
-                color: Color(0xFF959CB5),
+                color: kProfileOverallBackgroundColor,
                 child: Stack(
                   alignment: AlignmentDirectional.topEnd,
                   children: <Widget>[
@@ -30,7 +32,10 @@ class ProfileScreen extends StatelessWidget {
                     ),
                     Column(
                       children: <Widget>[
-                        SizedBox(width: media.width,height: 30,),
+                        SizedBox(
+                          width: media.width,
+                          height: 30,
+                        ),
                         ClipRRect(
                           borderRadius: BorderRadius.circular(90),
                           child: Container(
@@ -44,20 +49,14 @@ class ProfileScreen extends StatelessWidget {
                           padding: const EdgeInsets.symmetric(vertical: 8),
                           child: Text(
                             'Gość',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w600,
-                                fontSize: 25),
+                            style: kProfileUserNameTextStyle,
                           ),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(top: 5),
                           child: Text(
                             'adres@email.com',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w300,
-                                fontSize: 18),
+                            style: kProfileUserMailTextStyle,
                           ),
                         ),
                         Padding(
@@ -116,7 +115,7 @@ class ProfileScreen extends StatelessWidget {
                       color: Colors.white,
                       spreadRadius: 30,
                       blurRadius: 10,
-                      offset: Offset(0, 10))
+                      offset: Offset(0, 10)),
                 ]),
                 child: Column(
                   children: <Widget>[
@@ -148,7 +147,9 @@ class ProfileScreen extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height:50,)
+          SizedBox(
+            height: 50,
+          )
         ],
       ),
     );
