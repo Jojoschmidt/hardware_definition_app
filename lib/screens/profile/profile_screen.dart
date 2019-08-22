@@ -43,6 +43,12 @@ class ProfileScreen extends StatelessWidget {
                                 width: media.width * 0.22,
                                 height: media.width * 0.22),
                             color: Colors.black,
+                            child: FittedBox(
+                              child: Image.network(
+                                'https://i.kym-cdn.com/entries/icons/original/000/016/546/hidethepainharold.jpg',
+                              ),
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                         Padding(
@@ -81,7 +87,7 @@ class ProfileScreen extends StatelessWidget {
                                   width: 2,
                                   style: BorderStyle.solid,
                                   color: Colors.white),
-                              onPressed: () => print('/info'),
+                              onPressed: () => Navigator.pushNamed(context, '/info'),
                               child: Container(
                                 child: Center(
                                   child: Text(
