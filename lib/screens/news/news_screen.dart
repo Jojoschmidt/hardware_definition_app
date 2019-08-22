@@ -70,7 +70,7 @@ class _NewsScreenState extends State<NewsScreen> {
                     Expanded(
                       child: ListView.separated(
                         controller: scrollController,
-                        padding: EdgeInsets.only(top: 100),
+                        padding: EdgeInsets.only(top: 100,bottom: 150),
                         itemBuilder: (BuildContext context, int index) {
                           return NewsCard(
                               posts[index]['_embedded']['author'][0]["name"],

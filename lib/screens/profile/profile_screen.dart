@@ -78,30 +78,28 @@ class ProfileScreen extends StatelessWidget {
                         ),
                         Padding(
                           padding: const EdgeInsets.only(top: 20),
-                          child: ClipRRect(
-                            child: OutlineButton(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(30),
-                              ),
-                              borderSide: BorderSide(
-                                  width: 2,
-                                  style: BorderStyle.solid,
-                                  color: Colors.white),
-                              onPressed: () => Navigator.pushNamed(context, '/info'),
-                              child: Container(
-                                child: Center(
-                                  child: Text(
-                                    'Informacje',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                    ),
+                          child: OutlineButton(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(30),
+                            ),
+                            borderSide: BorderSide(
+                                width: 1,
+                                style: BorderStyle.solid,
+                                color: Colors.white),
+                            onPressed: () =>
+                                Navigator.pushNamed(context, '/info'),
+                            child: Container(
+                              child: Center(
+                                child: Text(
+                                  'Informacje',
+                                  style: TextStyle(
+                                    color: Colors.white,
                                   ),
                                 ),
-                                constraints: BoxConstraints.tightFor(
-                                    width: media.width * 0.55, height: 50),
                               ),
+                              constraints: BoxConstraints.tightFor(
+                                  width: media.width * 0.55, height: 50),
                             ),
-                            borderRadius: BorderRadius.circular(45),
                           ),
                         )
                       ],
@@ -113,43 +111,44 @@ class ProfileScreen extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.all(20.0),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(40),
-              child: Container(
-                decoration: BoxDecoration(boxShadow: [
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(40),
+                boxShadow: [
                   BoxShadow(
-                      color: Colors.white,
-                      spreadRadius: 30,
-                      blurRadius: 10,
-                      offset: Offset(0, 10)),
-                ]),
-                child: Column(
-                  children: <Widget>[
-                    ProfileListElement(
-                        'Zapisane', '/saved', Icons.collections_bookmark),
-                    ProfileListSeparator(),
-                    ProfileListElement(
-                        'Newsletter', '/newsletter', Icons.calendar_today),
-                    ProfileListSeparator(),
-                    ProfileListElement(
-                        'Pomoc techniczna', '/support', Icons.headset_mic),
-                    ProfileListSeparator(),
-                    ProfileListElement(
-                        'Twoje artykuły', '/your_articles', Icons.message),
-                    ProfileListSeparator(),
-                    ProfileListElement(
-                        'Powiadomienia', '/notifications', Icons.notifications),
-                    ProfileListSeparator(),
-                    ProfileListElement(
-                        'Konkursy', '/contests', Icons.card_giftcard),
-                    ProfileListSeparator(),
-                    ProfileListElement(
-                        'Wesprzyj nas', '/donate', Icons.credit_card),
-                    ProfileListSeparator(),
-                    ProfileListElement('Rabaty dla użytkowników', '/promo',
-                        Icons.priority_high),
-                  ],
-                ),
+                      color: Colors.grey.shade300,
+                      spreadRadius: 20,
+                      blurRadius: 30,
+                      offset: Offset(0, 5)),
+                ],
+                color: Colors.white
+              ),
+              child: Column(
+                children: <Widget>[
+                  ProfileListElement(
+                      'Zapisane', '/saved', Icons.collections_bookmark),
+                  ProfileListSeparator(),
+                  ProfileListElement(
+                      'Newsletter', '/newsletter', Icons.calendar_today),
+                  ProfileListSeparator(),
+                  ProfileListElement(
+                      'Pomoc techniczna', '/support', Icons.headset_mic),
+                  ProfileListSeparator(),
+                  ProfileListElement(
+                      'Twoje artykuły', '/your_articles', Icons.message),
+                  ProfileListSeparator(),
+                  ProfileListElement(
+                      'Powiadomienia', '/notifications', Icons.notifications),
+                  ProfileListSeparator(),
+                  ProfileListElement(
+                      'Konkursy', '/contests', Icons.card_giftcard),
+                  ProfileListSeparator(),
+                  ProfileListElement(
+                      'Wesprzyj nas', '/donate', Icons.credit_card),
+                  ProfileListSeparator(),
+                  ProfileListElement(
+                      'Rabaty dla użytkowników', '/promo', Icons.priority_high),
+                ],
               ),
             ),
           ),

@@ -31,23 +31,25 @@ class _TopButtonBarState extends State<TopButtonBar> {
           opacity: 1,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(30),
-              child: RaisedButton(
-                color: Colors.white,
-                elevation: 50,
-                onPressed: () {
-                  setState(() {
-                    print('HardwareDailyNews');
-                  });
-                },
-                child: Container(
-                  child: Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Text(
-                      'HardwareDaily News',
-                      style: kHardwareDailyButtonTextStyle,
-                    ),
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.shade300,
+                    blurRadius: 30,
+                    spreadRadius: 5,
+                    offset: Offset(0, 10)
+                  )
+                ],
+                color: Colors.white
+              ),
+              child: GestureDetector(
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Text(
+                    'HardwareDaily News',
+                    style: kHardwareDailyButtonTextStyle,
                   ),
                 ),
               ),
