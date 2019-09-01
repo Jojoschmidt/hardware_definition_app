@@ -57,7 +57,7 @@ class _NewsScreenState extends State<NewsScreen> {
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: kNewsScreenBackgroundColor,
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Stack(
           alignment: AlignmentDirectional.topEnd,
@@ -73,17 +73,18 @@ class _NewsScreenState extends State<NewsScreen> {
                         padding: EdgeInsets.only(top: 100, bottom: 150),
                         itemBuilder: (BuildContext context, int index) {
                           return NewsCard(
-                              posts[index]['_embedded']['author'][0]["name"],
-                              'wczoraj',
-                              posts[index]['title']['rendered'],
-                              'Konkurs',
-                              Image.network(posts[index]["_embedded"]
-                                              ["wp:featuredmedia"][0]
-                                          ["source_url"] !=
-                                      null
-                                  ? posts[index]["_embedded"]
-                                      ["wp:featuredmedia"][0]["source_url"]
-                                  : 'https://i.kym-cdn.com/entries/icons/original/000/016/546/hidethepainharold.jpg'));
+                            posts[index]['_embedded']['author'][0]["name"],
+                            'wczoraj',
+                            posts[index]['title']['rendered'],
+                            'Konkurs',
+                            Image.network(posts[index]["_embedded"]
+                                        ["wp:featuredmedia"][0]["source_url"] !=
+                                    null
+                                ? posts[index]["_embedded"]["wp:featuredmedia"]
+                                    [0]["source_url"]
+                                : 'https://i.kym-cdn.com/entries/icons/original/000/016/546/hidethepainharold.jpg'),
+                              posts[index]['content']['rendered']
+                          );
                         },
                         itemCount: posts == null ? 0 : posts.length,
                         separatorBuilder: (BuildContext context, int index) =>

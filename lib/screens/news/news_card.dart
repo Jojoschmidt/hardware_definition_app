@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hardware_definition_app/constraints.dart';
-import 'news_card_insides.dart';
+import 'news_card_image.dart';
+import 'news_card_label.dart';
 
 class NewsCard extends StatefulWidget {
   final String author;
@@ -8,8 +9,9 @@ class NewsCard extends StatefulWidget {
   final String title;
   final String type;
   final Image image;
+  final String content;
 
-  NewsCard(this.author, this.date, this.title, this.type, this.image);
+  NewsCard(this.author, this.date, this.title, this.type, this.image,this.content);
 
   @override
   _NewsCardState createState() => _NewsCardState();
@@ -18,55 +20,21 @@ class NewsCard extends StatefulWidget {
 class _NewsCardState extends State<NewsCard> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.only(left: 15),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              Container(
-                alignment: AlignmentDirectional.center,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(90),
-                  child: Container(
-                    constraints: BoxConstraints.tightFor(width: 45, height: 45),
-                    color: Colors.black,
-                  ),
-                ),
-              ),
-              SizedBox(
-                width: 20,
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Text(
-                    widget.author,
-                    style: TextStyle(fontSize: 18),
-                  ),
-                  Text(
-                    widget.date,
-                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.w300),
-                  )
-                ],
-              )
-            ],
+    var media = MediaQuery.of(context).size.width;
+    return Container(
+      constraints: BoxConstraints.tightFor(width: media,height: media*0.87),
+      child: Stack(
+        children: <Widget>[
+          Align(
+            child: NewsCardImage(widget.author, widget.image),
+            alignment: AlignmentDirectional.topStart,
           ),
-        ),
-        Container(
-          alignment: AlignmentDirectional.topStart,
-          child: Padding(
-            padding: EdgeInsets.only(left: 20, top: 10, bottom: 10),
-            child: Text(
-              widget.title,
-              style: TextStyle(fontSize: 25),
-            ),
+          Align(
+            child: NewsCardLabel(widget.date,widget.title,widget.type,widget.content),
+            alignment: AlignmentDirectional.bottomEnd,
           ),
-        ),
-        NewsCardInsides(widget.type,widget.image)
-      ],
+        ],
+      ),
     );
   }
 }
