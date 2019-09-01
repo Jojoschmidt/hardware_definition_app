@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => NewsScreen(),
         '/profile': (context) => ProfileScreen(),
         'welcome': (context) => WelcomeScreen(),
-        '/info': (context) => InfoScreen(),
+        '/profile/info': (context) => InfoScreen(),
         '/search': (context) => SearchScreen(),
         'logo': (context) => LogoScreen()
       },

@@ -14,16 +14,15 @@ class _TopButtonBarState extends State<TopButtonBar> {
       children: <Widget>[
         Opacity(
           opacity: 1,
-          child: IconButton(
-            onPressed: () {
-              setState(() {
-                print('masło');
-              });
-            },
-            icon: Icon(
-              Icons.search,
-              size: 50,
-              color: Colors.grey.shade300,
+          child: Hero(
+            tag: 'search',
+            child: FlatButton(
+              onPressed:()=> Navigator.pushNamed(context, '/search'),
+              child: Icon(
+                Icons.search,
+                size: 50,
+                color: Colors.grey.shade300,
+              ),
             ),
           ),
         ),

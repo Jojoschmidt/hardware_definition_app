@@ -24,7 +24,7 @@ class _LoginButtonState extends State<LoginButton> {
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: GestureDetector(
-        onTap: () => Navigator.popAndPushNamed(context, '/'),
+        onTap: () => Navigator.pushReplacementNamed(context, '/'),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(20),
           child: Container(

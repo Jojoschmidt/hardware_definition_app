@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:hardware_definition_app/constraints.dart';
 import 'package:hardware_definition_app/screens/news/top_button_bar.dart';
-import 'bottom_navigation_bar.dart';
+import '../../navigation/bottom_navigation_bar.dart';
 import 'package:flutter_wordpress/flutter_wordpress.dart' as wp;
 import 'news_card.dart';
 import 'package:http/http.dart' as http;
@@ -70,7 +70,7 @@ class _NewsScreenState extends State<NewsScreen> {
                     Expanded(
                       child: ListView.separated(
                         controller: scrollController,
-                        padding: EdgeInsets.only(top: 100,bottom: 150),
+                        padding: EdgeInsets.only(top: 100, bottom: 150),
                         itemBuilder: (BuildContext context, int index) {
                           return NewsCard(
                               posts[index]['_embedded']['author'][0]["name"],
@@ -103,7 +103,10 @@ class _NewsScreenState extends State<NewsScreen> {
                     )
                   ],
                 ),
-                CustomBottomNavigationBar(),
+                Hero(
+                  tag: 'bottomNavigationBar',
+                  child: CustomBottomNavigationBar(0),
+                ),
               ],
             ),
             TopButtonBar(),

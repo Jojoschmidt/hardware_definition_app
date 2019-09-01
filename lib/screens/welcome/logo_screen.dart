@@ -13,7 +13,7 @@ class _LogoScreenState extends State<LogoScreen> {
   void initState() {
     Future.delayed(
         Duration(seconds: 2),
-        () => Navigator.push(
+        () => Navigator.pushReplacement(
             context,
             PageRouteBuilder(
                 transitionDuration: Duration(milliseconds: 800),

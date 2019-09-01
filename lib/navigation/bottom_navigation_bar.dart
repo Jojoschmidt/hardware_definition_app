@@ -4,6 +4,10 @@ import 'package:hardware_definition_app/constraints.dart';
 import 'navigation_bar_button.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
+  final int currentScreen;
+
+  CustomBottomNavigationBar(this.currentScreen);
+
   @override
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size.width;
@@ -20,10 +24,10 @@ class CustomBottomNavigationBar extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
-                NavigationBarButton(Icons.home, true, '/'),
-                NavigationBarButton(Icons.search, false, '/search'),
-                NavigationBarButton(Icons.bookmark, false, '/saved'),
-                NavigationBarButton(Icons.person, false, '/profile')
+                NavigationBarButton(Icons.home, currentScreen == 0 ? true : false, '/',true),
+                NavigationBarButton(Icons.search, currentScreen == 1 ? true : false, '/search',false),
+                NavigationBarButton(Icons.bookmark, currentScreen == 2 ? true : false, '/saved',false),
+                NavigationBarButton(Icons.person, currentScreen == 3 ? true : false, '/profile',false)
               ],
             ),
           ),
