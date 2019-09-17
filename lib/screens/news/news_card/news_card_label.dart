@@ -11,8 +11,8 @@ class NewsCardLabel extends StatelessWidget {
   String prepareContent(String content) {
     String ellipsis = "..."; //define your variable truncation elipsis here
     String truncated = "";
-    if (content.length > content.length - 1) {
-      truncated = content.substring(0, 70 - ellipsis.length) + " " + ellipsis;
+    if (content.length > 68-ellipsis.length) {
+      truncated = content.substring(0, 68 - ellipsis.length) + " " + ellipsis;
     } else {
       truncated = content;
     }
@@ -22,6 +22,8 @@ class NewsCardLabel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(content);
+    print(date);
     var media = MediaQuery.of(context).size.width;
     return Padding(
       padding: EdgeInsets.only(right: media * 0.07),
@@ -53,7 +55,9 @@ class NewsCardLabel extends StatelessWidget {
                     child: Text(
                       title,
                       style: TextStyle(
-                          fontSize: media * 0.045, fontWeight: FontWeight.w700),
+                          fontSize: media * 0.045,
+                          fontWeight: FontWeight.w700,
+                          fontFamily: 'barlow'),
                     ),
                   ),
                   Container(
@@ -66,8 +70,13 @@ class NewsCardLabel extends StatelessWidget {
                       color: Colors.white,
                     ),
                     child: Text(
-                      'HD-News',
-                      style: TextStyle(fontSize: 15, color: Colors.teal),
+                      type,
+                      style: TextStyle(
+                        fontSize: media*0.030,
+                        color: Colors.teal,
+                        fontFamily: 'muli',
+                        fontWeight: FontWeight.w300,
+                      ),
                     ),
                   ),
                 ],
@@ -77,18 +86,23 @@ class NewsCardLabel extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text(
-                      prepareContent(content),
-                      style: TextStyle(
-                        fontWeight: FontWeight.w300,
-                        fontSize: 17,
+                    Expanded(
+                      child: Text(
+                        prepareContent(content),
+                        style: TextStyle(
+                          fontFamily: 'muli',
+                          fontWeight: FontWeight.w300,
+                          fontSize: media * 0.035,
+                        ),
                       ),
                     ),
-
                     Text(
                       'Wczoraj, 12:02',
                       style: TextStyle(
-                          fontWeight: FontWeight.w200, fontSize: 13),
+                        fontWeight: FontWeight.w300,
+                        fontSize: media * 0.0255,
+                        fontFamily: 'muli',
+                      ),
                     )
                   ],
                 ),

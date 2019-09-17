@@ -18,23 +18,30 @@ class _NewsCardImageState extends State<NewsCardImage> {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.horizontal(right: Radius.circular(20)),
-        image: new DecorationImage(image: widget.image.image,fit: BoxFit.cover),
+        image:
+            new DecorationImage(image: widget.image.image, fit: BoxFit.cover),
       ),
-      constraints: BoxConstraints.tightFor(width: media*0.87,height: media*0.53),
+      constraints:
+          BoxConstraints.tightFor(width: media * 0.87, height: media * 0.53),
       alignment: AlignmentDirectional.bottomEnd,
       child: Padding(
-        padding: EdgeInsets.only(bottom: media*0.12),
+        padding: EdgeInsets.only(bottom: media * 0.12),
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.horizontal(left: Radius.circular(30)),
             color: Colors.white,
           ),
           alignment: AlignmentDirectional.center,
-          constraints: BoxConstraints.tightFor(height: media * 0.08,width: media*0.3),
-
+          constraints:
+              BoxConstraints.tightFor(height: media * 0.08, width: media * 0.3),
           child: Text(
             widget.author,
-            style: TextStyle(fontSize: media*0.029, color: Colors.black),
+            style: TextStyle(
+              fontSize: media * 0.029,
+              color: Colors.black,
+              fontFamily: 'quicksand',
+              fontWeight: FontWeight.w500,
+            ),
           ),
         ),
       ),

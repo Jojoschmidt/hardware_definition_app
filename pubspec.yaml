@@ -11,11 +11,28 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^0.1.2
   flutter_wordpress: ^0.1.4
+  loading: ^1.0.1
+  font_awesome_flutter: ^8.5.0
+  flutter_svg: ^0.14.1
+  rxdart: ^0.22.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 flutter:
+  fonts:
+    - family: coolvetica
+      fonts:
+        - asset: fonts/coolvetica rg.ttf
+    - family: quicksand
+      fonts:
+        - asset: fonts/Quicksand/Quicksand-Regular.ttf
+    - family: muli
+      fonts:
+        - asset: fonts/Muli/Muli-Light.ttf
+    - family: muli
+      fonts:
+        - asset: fonts/Barlow/Barlow-Bold.ttf
   uses-material-design: true
   assets:
     - assets/
