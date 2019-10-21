@@ -14,5 +14,5 @@ const TextStyle kProfileUserNameTextStyle =
 const TextStyle kProfileUserMailTextStyle =
     TextStyle(color: Colors.white, fontWeight: FontWeight.w300, fontSize: 18);
 const TextStyle kWelcomeScreenWelcomeMessageTextStyle =
-    TextStyle(color: Colors.white, fontWeight: FontWeight.w700, fontSize: 30);
+    TextStyle(color: Colors.white, fontWeight: FontWeight.w700, fontSize: 20);
 

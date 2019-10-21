@@ -26,7 +26,7 @@ class _LoginButtonState extends State<LoginButton> {
       child: GestureDetector(
         onTap: () => Navigator.pushReplacementNamed(context, '/'),
         child: ClipRRect(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(15),
           child: Container(
             alignment: AlignmentDirectional.center,
             constraints: BoxConstraints.tightFor(
@@ -44,13 +44,21 @@ class _LoginButtonState extends State<LoginButton> {
                         )
                       : null,
                 ),
-                Text(
-                  widget.text,
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w300,
-                      letterSpacing: 3),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      alignment: AlignmentDirectional.center,
+                      child: Text(
+                        widget.text,
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 15,
+                            fontWeight: FontWeight.w300,
+                            letterSpacing: 3),
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),

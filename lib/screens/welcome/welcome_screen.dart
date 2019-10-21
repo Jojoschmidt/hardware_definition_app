@@ -19,15 +19,14 @@ class WelcomeScreen extends StatelessWidget {
                 tag: "Logo",
                 child: Container(
                   child: FittedBox(
-                    child: Image.asset(
-                        'assets/welcome_screen_logo.png'),
+                    child: Image.asset('assets/welcome_screen_logo.png'),
                     fit: BoxFit.contain,
                   ),
-                  constraints: BoxConstraints.tightFor(width: 300),
+                  constraints: BoxConstraints.tightFor(width: 200),
                 ),
               ),
             ),
-            Expanded(child: Hero(child: LoginButtonSection(),tag: 'bottomNavigationBar',)),
+            Expanded(child: LoginButtonSection()),
           ],
         ),
       ),
